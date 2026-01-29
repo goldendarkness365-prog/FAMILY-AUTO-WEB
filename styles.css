@@ -1,0 +1,309 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f5f5f5;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Header Navigation */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #111;
+  color: white;
+  padding: 15px 40px;
+}
+
+header .logo {
+  font-size: 1.8em;
+  font-weight: bold;
+  color: #e63946;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: #e63946;
+}
+
+/* Hero Section */
+.hero {
+  background: url('dealership-hero.jpg') center/cover no-repeat;
+  color: white;
+  text-align: center;
+  padding: 120px 20px;
+}
+
+.hero h1 {
+  font-size: 3em;
+  margin-bottom: 15px;
+}
+
+.hero p {
+  font-size: 1.2em;
+}
+
+.hero .cta {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 12px 24px;
+  background: #e63946;
+  color: white;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: background 0.3s ease;
+}
+
+.hero .cta:hover {
+  background: #b71c1c;
+}
+
+/* About Section */
+.about {
+  padding: 50px 20px;
+  text-align: center;
+  background: #fff;
+}
+
+.about h2 {
+  margin-bottom: 20px;
+}
+
+/* Latest Stock */
+.latest-stock {
+  padding: 50px 20px;
+  background: #fafafa;
+}
+
+.car-grid {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.car-card {
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  width: 280px;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.car-card:hover {
+  transform: scale(1.05);
+}
+
+.car-card img {
+  max-width: 100%;
+  border-radius: 4px;
+}
+
+.price {
+  display: block;
+  margin-top: 10px;
+  font-weight: bold;
+  color: #e63946;
+}
+
+/* Why Us Section */
+.why-us {
+  padding: 50px 20px;
+  background: #f0f0f0;
+  text-align: center;
+}
+
+.features {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.feature {
+  width: 200px;
+  text-align: center;
+}
+
+.feature img {
+  width: 60px;
+  margin-bottom: 10px;
+}
+
+/* Services Page */
+.services {
+  padding: 50px 20px;
+  background: #fff;
+}
+
+.service-grid {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.service {
+  background: #fafafa;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  width: 250px;
+  text-align: center;
+}
+
+/* Location Page */
+.location {
+  padding: 50px 20px;
+  background: #fafafa;
+  text-align: center;
+}
+
+.location iframe {
+  width: 100%;
+  height: 400px;
+  border: none;
+  margin: 20px 0;
+}
+
+.hours, .directions {
+  margin-top: 20px;
+}
+
+.hours ul {
+  list-style: none;
+  padding: 0;
+}
+
+/* Contact Page */
+.contact {
+  padding: 50px 20px;
+  background: #fff;
+  max-width: 800px;
+  margin: auto;
+}
+
+.contact form {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact label {
+  margin-top: 15px;
+  font-weight: bold;
+}
+
+.contact input, .contact textarea {
+  margin-top: 5px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.contact button {
+  margin-top: 20px;
+  padding: 12px;
+  background-color: #e63946;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.contact button:hover {
+  background-color: #b71c1c;
+}
+
+.direct-info {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.direct-info a {
+  color: #e63946;
+  text-decoration: none;
+  margin: 0 5px;
+}
+
+.direct-info a:hover {
+  text-decoration: underline;
+}
+
+/* Testimonials */
+.testimonials {
+  padding: 50px 20px;
+  background: #fff;
+  text-align: center;
+}
+
+.testimonial {
+  margin: 20px auto;
+  max-width: 600px;
+  font-style: italic;
+}
+
+/* CTA Section */
+.cta-section {
+  padding: 50px 20px;
+  background: #e63946;
+  color: white;
+  text-align: center;
+}
+
+.cta-section .cta {
+  background: white;
+  color: #e63946;
+  padding: 12px 24px;
+  border-radius: 4px;
+  text-decoration: none;
+}
+
+.cta-section .cta:hover {
+  background: #f5f5f5;
+}
+
+/* Footer */
+footer {
+  background: #111;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  nav ul {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .car-grid, .features, .service-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .hero h1 {
+    font-size: 2em;
+  }
+}
