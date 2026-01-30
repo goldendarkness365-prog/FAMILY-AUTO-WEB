@@ -258,3 +258,7 @@ footer {
   .car-grid, .badges, .service-grid { flex-direction: column; align-items: center; }
   .hero h1 { font-size: 2em; }
 }
+.swiper-slide {
+  width: 320px;   /* larger card width */
+  height: auto;   /* let content expand naturally */
+}
