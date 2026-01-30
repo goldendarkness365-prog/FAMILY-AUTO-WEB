@@ -17,3 +17,17 @@
     },
   });
 </script>
+var swiper = new Swiper(".mySwiper", {
+  slidesPerView: 4, // increase number of visible cars
+  spaceBetween: 40, // more spacing between cars
+  centeredSlides: true,
+  loop: true,
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
+  pagination: {
+    el: ".swiper-pagination",
+    clickable: true,
+  },
+});
