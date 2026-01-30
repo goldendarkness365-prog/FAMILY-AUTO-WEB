@@ -62,17 +62,7 @@ nav a:hover { color: #d4af37; }
 
 .hero .cta:hover { background: #b8860b; color: #fff; }
 
-/* About */
-.about {
-  padding: 50px 20px;
-  text-align: center;
-  background: #222;
-  border-top: 1px solid #d4af37;
-}
-
-.about h2 { color: #d4af37; margin-bottom: 20px; }
-
-/* Car Grid */
+/* Car Grid (Homepage Latest Models) */
 .car-grid {
   display: flex;
   gap: 20px;
@@ -115,6 +105,51 @@ nav a:hover { color: #d4af37; }
   border-radius: 6px;
   font-weight: bold;
 }
+
+/* Inventory Slider (NFS Style) */
+.car-selector {
+  padding: 50px 20px;
+  background: #111;
+  text-align: center;
+}
+
+.car-selector h2 {
+  color: #d4af37;
+  margin-bottom: 30px;
+}
+
+.swiper {
+  width: 90%;
+  padding-bottom: 40px;
+}
+
+.swiper-slide {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #222;
+  border: 1px solid #d4af37;
+  border-radius: 8px;
+  padding: 20px;
+  transition: transform 0.3s ease;
+}
+
+.swiper-slide:hover { transform: scale(1.05); }
+.swiper-slide img { max-width: 100%; border-radius: 4px; }
+.swiper-slide h3 { margin-top: 15px; color: #f5f5f5; }
+.swiper-slide .price { color: #d4af37; font-weight: bold; margin: 10px 0; }
+
+.swiper-slide button {
+  background: #d4af37;
+  color: #000;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.swiper-slide button:hover { background: #b8860b; color: #fff; }
 
 /* Services */
 .services {
