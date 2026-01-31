@@ -82,3 +82,20 @@ const swiper = new Swiper('.swiper-container', {
     }
   }
 });
+// Animate performance bars on load
+window.addEventListener("load", () => {
+  document.querySelector(".fill.speed").style.width = "90%";
+  document.querySelector(".fill.torque").style.width = "75%";
+  document.querySelector(".fill.efficiency").style.width = "65%";
+});
+
+// Interior modal
+function openInterior() {
+  const modal = document.getElementById("interiorModal");
+  const img = document.getElementById("interiorImg");
+  img.src = "car-interior.jpg";
+  modal.style.display = "block";
+}
+function closeInterior() {
+  document.getElementById("interiorModal").style.display = "none";
+}

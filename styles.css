@@ -632,3 +632,72 @@ footer {
     height: auto;
   }
 }
+/* Performance Highlights */
+.performance {
+  padding: 40px;
+  background: #0d0d0d;
+  color: gold;
+}
+.performance h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+.stat {
+  margin: 15px 0;
+}
+.bar {
+  background: #333;
+  border-radius: 6px;
+  overflow: hidden;
+  height: 20px;
+}
+.fill {
+  height: 100%;
+  width: 0;
+  transition: width 2s ease;
+}
+.fill.speed { background: gold; }
+.fill.torque { background: #ffd700; }
+.fill.efficiency { background: #b8860b; }
+
+/* Interior Modal */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  left: 0; top: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.9);
+}
+.modal-content {
+  margin: auto;
+  display: block;
+  max-width: 90%;
+  max-height: 80%;
+  border: 3px solid gold;
+  border-radius: 8px;
+}
+.close {
+  position: absolute;
+  top: 20px; right: 35px;
+  color: gold;
+  font-size: 40px;
+  cursor: pointer;
+}
+
+/* Background Atmosphere */
+.hero {
+  background: url('Copilot_20260116_170406.png') center/cover no-repeat;
+  position: relative;
+}
+.hero::after {
+  content: "";
+  position: absolute;
+  top:0; left:0; right:0; bottom:0;
+  background: radial-gradient(circle at center, rgba(255,215,0,0.2), transparent);
+  animation: shimmer 5s infinite alternate;
+}
+@keyframes shimmer {
+  from { opacity: 0.2; }
+  to { opacity: 0.6; }
+}
