@@ -613,3 +613,22 @@ footer {
     font-size: 50px; /* bigger tap targets */
   }
 }
+/* Mobile slider: show one car per view */
+@media (max-width: 768px) {
+  .inventory-grid {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+  }
+
+  .car-card {
+    flex: 0 0 100%;   /* each card takes full width */
+    scroll-snap-align: center;
+    margin-right: 10px;
+  }
+
+  .car-card img {
+    width: 100%;
+    height: auto;
+  }
+}

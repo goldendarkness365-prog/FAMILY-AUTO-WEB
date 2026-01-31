@@ -73,3 +73,12 @@ function changeImage(direction) {
   document.getElementById("lightbox-img").src = img.src;
   document.getElementById("lightbox-caption").innerHTML = img.alt;
 }
+const swiper = new Swiper('.swiper-container', {
+  slidesPerView: 3, // desktop
+  spaceBetween: 20,
+  breakpoints: {
+    768: {
+      slidesPerView: 1, // mobile
+    }
+  }
+});
