@@ -115,3 +115,4 @@ function animateBars() {
 
 // Attach listener
 window.addEventListener("scroll", animateBars);
+document.querySelector(".fill.speed").style.width = "90%";
