@@ -99,3 +99,4 @@ window.addEventListener("load", () => {
   document.querySelector(".fill.torque").style.width = "75%";
   document.querySelector(".fill.efficiency").style.width = "65%";
 });
+alert("Script is running!");
