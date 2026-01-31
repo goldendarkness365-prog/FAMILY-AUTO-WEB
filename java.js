@@ -93,11 +93,7 @@ function openInterior() {
 function closeInterior() {
   document.getElementById("interiorModal").style.display = "none";
 }
-window.addEventListener("DOMContentLoaded", () => {
-  document.querySelector(".fill.speed").style.width = "90%";
-  document.querySelector(".fill.torque").style.width = "75%";
-  document.querySelector(".fill.efficiency").style.width = "65%";
-});
+
 // Animate performance bars on page load
 window.addEventListener("DOMContentLoaded", () => {
   document.querySelector(".fill.speed").style.width = "90%";
