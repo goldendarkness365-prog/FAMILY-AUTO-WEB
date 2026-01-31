@@ -653,7 +653,7 @@ footer {
 }
 .fill {
   height: 100%;
-  width: 0;
+  width: 0; /* start collapsed */
   transition: width 2s ease;
 }
 .fill.speed { background: gold; }

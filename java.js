@@ -82,20 +82,38 @@ const swiper = new Swiper('.swiper-container', {
     }
   }
 });
-// Animate performance bars on load
-window.addEventListener("load", () => {
-  document.querySelector(".fill.speed").style.width = "90%";
-  document.querySelector(".fill.torque").style.width = "75%";
-  document.querySelector(".fill.efficiency").style.width = "65%";
-});
 
 // Interior modal
 function openInterior() {
   const modal = document.getElementById("interiorModal");
   const img = document.getElementById("interiorImg");
-  img.src = "car-interior.jpg";
+  img.src = "Copilot_20260116_170406.png";
   modal.style.display = "block";
 }
 function closeInterior() {
   document.getElementById("interiorModal").style.display = "none";
 }
+window.addEventListener("DOMContentLoaded", () => {
+  document.querySelector(".fill.speed").style.width = "90%";
+  document.querySelector(".fill.torque").style.width = "75%";
+  document.querySelector(".fill.efficiency").style.width = "65%";
+});
+// Scroll-triggered performance bar animation
+function animateBars() {
+  const performanceSection = document.querySelector(".performance");
+  const bars = document.querySelectorAll(".fill");
+
+  const sectionTop = performanceSection.getBoundingClientRect().top;
+  const windowHeight = window.innerHeight;
+
+  if (sectionTop < windowHeight - 100) {
+    document.querySelector(".fill.speed").style.width = "90%";
+    document.querySelector(".fill.torque").style.width = "75%";
+    document.querySelector(".fill.efficiency").style.width = "65%";
+
+    // Remove listener once animated (prevents re-triggering)
+    window.removeEventListener("scroll", animateBars);
+  }
+}
+
+window.addEventListener("scroll", animateBars);
