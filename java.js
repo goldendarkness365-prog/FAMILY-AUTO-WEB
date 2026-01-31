@@ -98,21 +98,9 @@ window.addEventListener("DOMContentLoaded", () => {
   document.querySelector(".fill.torque").style.width = "75%";
   document.querySelector(".fill.efficiency").style.width = "65%";
 });
-function animateBars() {
-  const performanceSection = document.querySelector(".performance");
-  const sectionTop = performanceSection.getBoundingClientRect().top;
-  const windowHeight = window.innerHeight;
-
-  if (sectionTop < windowHeight - 100) {
-    document.querySelector(".fill.speed").style.width = "90%";
-    document.querySelector(".fill.torque").style.width = "75%";
-    document.querySelector(".fill.efficiency").style.width = "65%";
-
-    // Remove listener so it only runs once
-    window.removeEventListener("scroll", animateBars);
-  }
-}
-
-// Attach listener
-window.addEventListener("scroll", animateBars);
-document.querySelector(".fill.speed").style.width = "90%";
+// Animate performance bars on page load
+window.addEventListener("DOMContentLoaded", () => {
+  document.querySelector(".fill.speed").style.width = "90%";
+  document.querySelector(".fill.torque").style.width = "75%";
+  document.querySelector(".fill.efficiency").style.width = "65%";
+});
