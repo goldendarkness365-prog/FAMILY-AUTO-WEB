@@ -1,17 +1,6 @@
-var swiper = new Swiper(".mySwiper", {
-  slidesPerView: 4, // increase number of visible cars
-  spaceBetween: 40, // more spacing between cars
-  centeredSlides: true,
-  loop: true,
-  navigation: {
-    nextEl: ".swiper-button-next",
-    prevEl: ".swiper-button-prev",
-  },
-  pagination: {
-    el: ".swiper-pagination",
-    clickable: true,
-  },
-});
+/* =========================
+   Inventory Page Search Bar
+   ========================= */
 function filterCars() {
   const input = document.getElementById('searchBar').value.toLowerCase();
   const cars = document.querySelectorAll('.car-card');
@@ -25,6 +14,10 @@ function filterCars() {
     }
   });
 }
+
+/* =========================
+   Lightbox Gallery (Car Detail)
+   ========================= */
 let currentIndex = 0;
 let images = [];
 
@@ -54,30 +47,55 @@ function changeImage(direction) {
   document.getElementById("lightbox-img").src = img.src;
   document.getElementById("lightbox-caption").innerHTML = img.alt;
 }
-const swiper = new Swiper('.swiper-container', {
-  slidesPerView: 3, // desktop
-  spaceBetween: 20,
-  breakpoints: {
-    768: {
-      slidesPerView: 1, // mobile
-    }
+
+/* =========================
+   Swipe Gestures for Lightbox (Mobile)
+   ========================= */
+let startX = 0;
+
+document.addEventListener("DOMContentLoaded", () => {
+  const lightbox = document.getElementById("lightbox");
+  if (lightbox) {
+    lightbox.addEventListener("touchstart", function(e) {
+      startX = e.touches[0].clientX;
+    });
+
+    lightbox.addEventListener("touchend", function(e) {
+      let endX = e.changedTouches[0].clientX;
+      if (endX < startX - 50) {
+        changeImage(1); // swipe left → next image
+      } else if (endX > startX + 50) {
+        changeImage(-1); // swipe right → previous image
+      }
+    });
   }
 });
 
-// Interior modal
+/* =========================
+   Interior Modal Zoom
+   ========================= */
 function openInterior() {
   const modal = document.getElementById("interiorModal");
   const img = document.getElementById("interiorImg");
-  img.src = "Copilot_20260116_170406.png";
+  img.src = "car-interior.jpg"; // replace with dynamic source if needed
   modal.style.display = "block";
 }
+
 function closeInterior() {
   document.getElementById("interiorModal").style.display = "none";
 }
 
+/* =========================
+   Performance Highlights Bars
+   ========================= */
 window.addEventListener("load", () => {
-  document.querySelector(".fill.speed").style.width = "90%";
-  document.querySelector(".fill.torque").style.width = "75%";
-  document.querySelector(".fill.efficiency").style.width = "65%";
+  const speedBar = document.querySelector(".fill.speed");
+  const torqueBar = document.querySelector(".fill.torque");
+  const efficiencyBar = document.querySelector(".fill.efficiency");
+
+  if (speedBar && torqueBar && efficiencyBar) {
+    speedBar.style.width = "90%";
+    torqueBar.style.width = "75%";
+    efficiencyBar.style.width = "65%";
+  }
 });
-alert("Script is running!");
