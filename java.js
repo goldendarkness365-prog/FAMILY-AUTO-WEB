@@ -98,11 +98,8 @@ window.addEventListener("DOMContentLoaded", () => {
   document.querySelector(".fill.torque").style.width = "75%";
   document.querySelector(".fill.efficiency").style.width = "65%";
 });
-// Scroll-triggered performance bar animation
 function animateBars() {
   const performanceSection = document.querySelector(".performance");
-  const bars = document.querySelectorAll(".fill");
-
   const sectionTop = performanceSection.getBoundingClientRect().top;
   const windowHeight = window.innerHeight;
 
@@ -111,9 +108,10 @@ function animateBars() {
     document.querySelector(".fill.torque").style.width = "75%";
     document.querySelector(".fill.efficiency").style.width = "65%";
 
-    // Remove listener once animated (prevents re-triggering)
+    // Remove listener so it only runs once
     window.removeEventListener("scroll", animateBars);
   }
 }
 
+// Attach listener
 window.addEventListener("scroll", animateBars);
