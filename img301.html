@@ -2,12 +2,11 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Family Auto - Car Details</title>
-  <link rel="stylesheet" href="styles.css">
+  <title>Family Auto - Car Detail</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- Navigation -->
+    <!-- Navigation -->
   <header>
     <div class="logo">Family Auto</div>
     <nav>
@@ -21,6 +20,7 @@
     </nav>
   </header>
 
+
   <!-- Hero Showcase -->
   <section class="car-showcase">
     <div class="car-hero">
@@ -33,29 +33,58 @@
     </div>
   </section>
 
-  <!-- Gallery -->
-  <section class="car-gallery">
-    <h2>Gallery</h2>
-    <div class="gallery-grid">
-      <img src="imgi_26_619407982_1212947850980871_1836319903540980738_n.webp" alt="Front View">
-      <img src="imgi_25_621685023_1212948417647481_4810778876212371111_n.webp" alt="Side View">
-      <img src="imgi_19_619646159_1212948764314113_5061841956176633228_n.webp" alt="Interior">
-      <img src="imgi_27_618579222_1212947910980865_5330146238911392164_n.webp" alt="Back View">
+  <!-- Specs -->
+  <section class="specs">
+    <div class="spec">
+      <div class="spec-icon">⚡</div>
+      <p>Horsepower: 400hp</p>
+    </div>
+    <div class="spec">
+      <div class="spec-icon">🛞</div>
+      <p>Rims: 20" Alloy</p>
+    </div>
+    <div class="spec">
+      <div class="spec-icon">🎨</div>
+      <p>Color: Matte Black</p>
     </div>
   </section>
 
-  <!-- Specs -->
-  <section class="car-specs">
-    <h2>Specifications</h2>
-    <table>
-      <tr><th>Year</th><td>2022</td></tr>
-      <tr><th>Mileage</th><td>15,000 km</td></tr>
-      <tr><th>Transmission</th><td>Automatic</td></tr>
-      <tr><th>Fuel Type</th><td>Petrol</td></tr>
-      <tr><th>Color</th><td>white</td></tr>
-    </table>
+  <!-- Gallery -->
+  <section class="gallery">
+    <h2 class="gallery-title">Gallery</h2>
+    <div class="gallery-grid">
+      <div class="gallery-item">
+        <img src="imgi_26_619407982_1212947850980871_1836319903540980738_n.webp" alt="Front view" onclick="openLightbox(this)">
+        <p>Front View</p>
+      </div>
+      <div class="gallery-item">
+        <img src="imgi_25_621685023_1212948417647481_4810778876212371111_n.webp" alt="Back view" onclick="openLightbox(this)">
+        <p>Back View</p>
+      </div>
+      <div class="gallery-item">
+        <img src="imgi_19_619646159_1212948764314113_5061841956176633228_n.webp" alt="Side view" onclick="openLightbox(this)">
+        <p>Side View</p>
+      </div>
+      <div class="gallery-item">
+        <img src="imgi_27_618579222_1212947910980865_5330146238911392164_n.webp" alt="Interior view" onclick="openLightbox(this)">
+        <p>Interior</p>
+      </div>
+    </div>
   </section>
 
+  <!-- CTA -->
+  <section class="cta">
+    <button>Book a Test Drive</button>
+  </section>
+
+  <!-- Lightbox -->
+  <div id="lightbox" class="lightbox">
+    <span class="close" onclick="closeLightbox()">&times;</span>
+    <img class="lightbox-content" id="lightbox-img">
+    <div class="caption" id="lightbox-caption"></div>
+    <a class="prev" onclick="changeImage(-1)">&#10094;</a>
+    <a class="next" onclick="changeImage(1)">&#10095;</a>
+  </div>
   <!-- Financing -->
   <section class="financing">
     <h2>Financing Options</h2>
@@ -74,9 +103,8 @@
   <section class="inquiry">
     <h2>Interested in this car?</h2>
     <p>Message us instantly on WhatsApp to schedule a test drive or ask questions.</p>
-    <a href="https://wa.me/254700123456" class="whatsapp-btn">Message Us on WhatsApp</a>
+    <a href="https://wa.me/254723122494" class="whatsapp-btn">Message Us on WhatsApp</a>
   </section>
-
   <!-- Footer -->
   <footer>
     <p>&copy; 2026 Family Auto. All rights reserved.</p>

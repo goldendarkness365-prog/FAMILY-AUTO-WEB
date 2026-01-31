@@ -31,3 +31,45 @@ var swiper = new Swiper(".mySwiper", {
     clickable: true,
   },
 });
+function filterCars() {
+  const input = document.getElementById('searchBar').value.toLowerCase();
+  const cars = document.querySelectorAll('.car-card');
+
+  cars.forEach(car => {
+    const name = car.getAttribute('data-name').toLowerCase();
+    if (name.includes(input)) {
+      car.style.display = 'block';
+    } else {
+      car.style.display = 'none';
+    }
+  });
+}
+let currentIndex = 0;
+let images = [];
+
+function openLightbox(img) {
+  const lightbox = document.getElementById("lightbox");
+  const lightboxImg = document.getElementById("lightbox-img");
+  const caption = document.getElementById("lightbox-caption");
+
+  images = Array.from(document.querySelectorAll(".gallery-item img"));
+  currentIndex = images.indexOf(img);
+
+  lightbox.style.display = "block";
+  lightboxImg.src = img.src;
+  caption.innerHTML = img.alt;
+}
+
+function closeLightbox() {
+  document.getElementById("lightbox").style.display = "none";
+}
+
+function changeImage(direction) {
+  currentIndex += direction;
+  if (currentIndex < 0) currentIndex = images.length - 1;
+  if (currentIndex >= images.length) currentIndex = 0;
+
+  const img = images[currentIndex];
+  document.getElementById("lightbox-img").src = img.src;
+  document.getElementById("lightbox-caption").innerHTML = img.alt;
+}

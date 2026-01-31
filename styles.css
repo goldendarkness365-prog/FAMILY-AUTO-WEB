@@ -372,3 +372,244 @@ footer {
   padding: 50px 20px;
   text-align: center;
 }
+.search-section { display: flex; justify-content: center; align-items: center; padding: 20px; background: #0d0d0d; } #searchBar { width: 60%; padding: 12px; border: 2px solid gold; border-radius: 6px; font-size: 1rem; margin-right: 10px; background: #111; color: #f5f5f5; } #searchBar::placeholder { color: #aaa; } .search-section button { background: gold; color: black; border: none; padding: 12px 20px; font-size: 1rem; cursor: pointer; transition: all 0.3s ease; } .search-section button:hover { background: #ffd700; box-shadow: 0 0 15px gold; transform: scale(1.05); }
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 2rem;
+  }
+  .specs {
+    flex-direction: column;
+    align-items: center;
+  }
+  .gallery-grid {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  }
+}
+.gallery {
+  padding: 40px;
+  background: #0d0d0d;
+  text-align: center;
+}
+
+.gallery-title {
+  font-size: 2rem;
+  color: gold;
+  margin-bottom: 20px;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.gallery-item {
+  background: #111;
+  padding: 15px;
+  border-radius: 8px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery-item img {
+  width: 100%;
+  border-radius: 6px;
+}
+
+.gallery-item:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(255, 215, 0, 0.6);
+}
+
+.gallery-item p {
+  margin-top: 10px;
+  color: #f5f5f5;
+}
+@keyframes zoomIn {
+  from { transform: scale(1.1); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.4);
+}
+
+.hero-title {
+  position: relative;
+  font-size: 3rem;
+  color: gold;
+  text-shadow: 0 0 20px rgba(255,215,0,0.8);
+  z-index: 2;
+}
+
+/* Specs Section */
+.specs {
+  display: flex;
+  justify-content: space-around;
+  padding: 40px;
+  background: #111;
+}
+
+.spec {
+  text-align: center;
+  animation: fadeUp 1s ease forwards;
+  opacity: 0;
+}
+
+.spec:nth-child(1) { animation-delay: 0.3s; }
+.spec:nth-child(2) { animation-delay: 0.6s; }
+.spec:nth-child(3) { animation-delay: 0.9s; }
+
+@keyframes fadeUp {
+  from { transform: translateY(30px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+.spec-icon {
+  font-size: 2rem;
+  color: gold;
+  margin-bottom: 10px;
+}
+
+/* CTA */
+.cta {
+  text-align: center;
+  padding: 40px;
+}
+
+.cta button {
+  background: gold;
+  color: black;
+  border: none;
+  padding: 15px 30px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.cta button:hover {
+  background: #ffd700;
+  box-shadow: 0 0 20px gold;
+  transform: scale(1.05);
+}
+
+/* Transition effect */
+.fade-transition {
+  animation: fadeBlack 1s ease forwards;
+}
+
+@keyframes fadeBlack {
+  from { opacity: 0; }
+  to { opacity: 1; background: black; }
+}
+/* Lightbox */
+.lightbox {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  padding-top: 60px;
+  left: 0; top: 0;
+  width: 100%; height: 100%;
+  background-color: rgba(0,0,0,0.9);
+}
+
+.lightbox-content {
+  margin: auto;
+  display: block;
+  max-width: 80%;
+  max-height: 80%;
+  border: 3px solid gold;
+  border-radius: 8px;
+}
+
+.caption {
+  text-align: center;
+  color: gold;
+  margin-top: 15px;
+}
+
+.close {
+  position: absolute;
+  top: 20px; right: 35px;
+  color: gold;
+  font-size: 40px;
+  cursor: pointer;
+}
+
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  padding: 16px;
+  color: gold;
+  font-size: 40px;
+  user-select: none;
+}
+
+.prev { left: 0; }
+.next { right: 0; }
+
+.prev:hover, .next:hover, .close:hover {
+  color: #ffd700;
+}
+
+/* =========================
+   MOBILE OPTIMIZATION
+   ========================= */
+@media (max-width: 768px) {
+  /* Hero */
+  .hero {
+    height: 60vh;
+    background-position: center;
+  }
+  .hero-title {
+    font-size: 2rem;
+    text-align: center;
+    padding: 0 10px;
+  }
+
+  /* Specs */
+  .specs {
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  }
+  .spec {
+    margin-bottom: 20px;
+  }
+
+  /* Gallery */
+  .gallery-grid {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px;
+  }
+  .gallery-item p {
+    font-size: 0.9rem;
+  }
+
+  /* CTA */
+  .cta button {
+    width: 90%;
+    font-size: 1rem;
+  }
+
+  /* Search Bar (Inventory Page) */
+  #searchBar {
+    width: 80%;
+    font-size: 1rem;
+  }
+  .search-section button {
+    font-size: 1rem;
+    padding: 10px 15px;
+  }
+
+  /* Lightbox */
+  .lightbox-content {
+    max-width: 95%;
+    max-height: 70%;
+  }
+  .close, .prev, .next {
+    font-size: 50px; /* bigger tap targets */
+  }
+}
