@@ -705,10 +705,6 @@ footer {
   to { opacity: 0.6; }
 }
 .showroom .platform {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   background: radial-gradient(circle at center, #111 40%, #000 100%);
   border-top: 8px solid gold;
   border-radius: 50% 50% 0 0;
