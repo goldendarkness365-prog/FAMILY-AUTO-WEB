@@ -122,22 +122,37 @@ const carViews = [
   "imgi_47_618583288_1212174007724922_4851369089993468968_n.webp"  // Interior
 ];
 
-// Open lightbox
+let currentIndex = 0;
+
+// Open lightbox with clicked image
 function openLightbox(imgElement) {
   const lightbox = document.getElementById("lightbox");
   const img = document.getElementById("lightbox-img");
   lightbox.style.display = "block";
 
+  // Find index by matching src against array
   const filename = imgElement.src.split("/").pop();
-  img.src = filename;
-
-  // ✅ update index without redeclaring
-  currentIndex = carViews.indexOf(filename);
+  currentIndex = carViews.findIndex(view => filename.includes(view));
+  img.src = carViews[currentIndex];
 }
 
-// Close lightbox
-function closeLightbox() {
-  document.getElementById("lightbox").style.display = "none";
+// Change view
+function changeView(index) {
+  const img = document.getElementById("lightbox-img");
+  img.classList.add("fade-out");
+  setTimeout(() => {
+    img.src = carViews[index];
+    img.classList.remove("fade-out");
+    img.classList.add("fade-in");
+    setTimeout(() => img.classList.remove("fade-in"), 500);
+  }, 500);
+  currentIndex = index;
+}
+
+// Slide navigation
+function changeSlide(n) {
+  currentIndex = (currentIndex + n + carViews.length) % carViews.length;
+  changeView(currentIndex);
 }
 
 // Change view (buttons)
