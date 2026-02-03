@@ -99,3 +99,6 @@ window.addEventListener("load", () => {
     efficiencyBar.style.width = "65%";
   }
 });
+function changeView(src) {
+  document.getElementById("lightbox-img").src = src;
+}

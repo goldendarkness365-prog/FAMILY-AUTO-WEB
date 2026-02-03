@@ -704,3 +704,19 @@ footer {
   from { opacity: 0.2; }
   to { opacity: 0.6; }
 }
+.showroom .platform {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: radial-gradient(circle at center, #111 40%, #000 100%);
+  border-top: 8px solid gold;
+  border-radius: 50% 50% 0 0;
+  padding: 40px;
+  box-shadow: 0 -10px 30px rgba(255,215,0,0.3);
+}
+
+.showroom img {
+  max-width: 80%;
+  transition: transform 0.5s ease;
+}

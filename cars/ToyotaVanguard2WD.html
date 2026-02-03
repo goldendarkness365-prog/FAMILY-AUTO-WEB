@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Family Auto - Car Detail</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+  <header>
+    <div class="logo">Family Auto</div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="inventory.html">Inventory</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="location.html">Location</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+
+  <!-- Hero Showcase -->
+  <section class="car-showcase">
+    <div class="car-hero">
+      <img src="images/imgi_35_621799430_1212170167725306_5541391585275819580_n.webp" alt="Toyota Corolla Hero">
+      <div class="overlay">
+        <h1>2013 Toyota Vanguard</h1>
+        <p>2WD, 7 Seater</p>
+        <p>Petrol</p>
+        <p>Auto</p>
+        <p>Fuel-efficient. Stylish. Ready for the road.</p>
+        <span class="price">Kes 2,150,000</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Specs Section -->
+<section class="specs">
+  <div class="spec">
+    <div class="spec-icon">⚡</div>
+    <p>2400cc</p>
+  </div>
+  <div class="spec">
+    <div class="spec-icon">🛞</div>
+    <p>Rims: 20" Alloy</p>
+  </div>
+  <div class="spec">
+    <div class="spec-icon">🎨</div>
+    <p>Color: Black</p>
+  </div>
+</section>
+
+<section class="performance">
+  <h2>Performance Highlights</h2>
+  <div class="stat">
+    <span>Speed</span>
+    <div class="bar"><div class="fill speed"></div></div>
+  </div>
+  <div class="stat">
+    <span>Torque</span>
+    <div class="bar"><div class="fill torque"></div></div>
+  </div>
+  <div class="stat">
+    <span>Efficiency</span>
+    <div class="bar"><div class="fill efficiency"></div></div>
+  </div>
+</section>
+
+
+<!-- Interior Modal -->
+<div id="interiorModal" class="modal">
+  <span class="close" onclick="closeInterior()">&times;</span>
+  <img class="modal-content" id="interiorImg">
+</div>
+
+
+  <!-- Gallery -->
+  <section class="gallery">
+    <h2 class="gallery-title">Gallery</h2>
+    <div class="gallery-grid">
+      <div class="gallery-item">
+        <img src="images/imgi_31_622354617_1212168611058795_2699262881328221358_n.webp" alt="Front view" onclick="openLightbox(this)">
+        <p>Front View</p>
+      </div>
+      <div class="gallery-item">
+        <img src="images/imgi_32_618239202_1212169367725386_2797200893620008522_n.webp" alt="Back view" onclick="openLightbox(this)">
+        <p>Back View</p>
+      </div>
+      <div class="gallery-item">
+        <img src="images/imgi_35_621799430_1212170167725306_5541391585275819580_n.webp" alt="Side view" onclick="openLightbox(this)">
+        <p>Side View</p>
+      </div>
+      <div class="gallery-item">
+        <img src="images/imgi_47_618583288_1212174007724922_4851369089993468968_n.webp" alt="Interior view" onclick="openLightbox(this)">
+        <p>Interior</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta">
+    <button>Book a Test Drive</button>
+  </section>
+
+  <!-- Lightbox -->
+  <div id="lightbox" class="lightbox">
+    <span class="close" onclick="closeLightbox()">&times;</span>
+    <img class="lightbox-content" id="lightbox-img">
+    <div class="caption" id="lightbox-caption"></div>
+    <a class="prev" onclick="changeImage(-1)">&#10094;</a>
+    <a class="next" onclick="changeImage(1)">&#10095;</a>
+  </div>
+  <!-- Financing -->
+  <section class="financing">
+    <h2>Financing Options</h2>
+    <p>Estimate your monthly payment:</p>
+    <form id="financeForm">
+      <label>Car Price (Ksh): <input type="number" id="price" value="2,150,000"></label>
+      <label>Down Payment (Ksh): <input type="number" id="down" value="1,000,000"></label>
+      <label>Loan Term (months): <input type="number" id="months" value="36"></label>
+      <label>Interest Rate (%): <input type="number" id="rate" value="5"></label>
+      <button type="button" onclick="calculatePayment()">Calculate</button>
+    </form>
+    <p id="paymentResult"></p>
+  </section>
+
+  <!-- Inquiry -->
+  <section class="inquiry">
+    <h2>Interested in this car?</h2>
+    <p>Message us instantly on WhatsApp to schedule a test drive or ask questions.</p>
+    <a href="https://wa.me/254723122494" class="whatsapp-btn">Message Us on WhatsApp</a>
+  </section>
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2026 Family Auto. All rights reserved.</p>
+  </footer>
+
+  <!-- Financing Script -->
+  <script>
+    function calculatePayment() {
+      let price = parseFloat(document.getElementById("price").value);
+      let down = parseFloat(document.getElementById("down").value);
+      let months = parseInt(document.getElementById("months").value);
+      let rate = parseFloat(document.getElementById("rate").value) / 100 / 12;
+
+      let loan = price - down;
+      let payment = (loan * rate) / (1 - Math.pow(1 + rate, -months));
+      document.getElementById("paymentResult").innerText =
+        "Estimated Monthly Payment: $" + payment.toFixed(2);
+    }
+    </script>
+    <script src="java.js"></script>
+</body>
+</html>
