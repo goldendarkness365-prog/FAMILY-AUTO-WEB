@@ -740,3 +740,85 @@ footer {
   font-size: 40px;
   cursor: pointer;
 }
+/* Showroom View Buttons */
+.view-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.view-buttons button {
+  background: #111;
+  color: gold;
+  border: 2px solid gold;
+  border-radius: 6px;
+  padding: 10px 18px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.view-buttons button:hover {
+  background: gold;
+  color: #000;
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(255,215,0,0.4);
+}
+
+.view-buttons button:active {
+  transform: scale(0.95);
+}
+.showroom img {
+  max-width: 100%;
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.showroom img.fade-out {
+  opacity: 0;
+  transform: scale(0.95);
+}
+
+.showroom img.fade-in {
+  opacity: 1;
+  transform: scale(1);
+}
+.view-buttons button:focus {
+  outline: none;
+  box-shadow: 0 0 10px gold;
+}
+.showroom .platform {
+  animation: riseUp 0.6s ease forwards;
+}
+
+@keyframes riseUp {
+  from { transform: translateY(50px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+/* Navigation Arrows */
+.showroom .prev, .showroom .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: gold;
+  font-weight: bold;
+  font-size: 30px;
+  transition: 0.3s ease;
+  user-select: none;
+}
+
+.showroom .prev {
+  left: 0;
+}
+
+.showroom .next {
+  right: 0;
+}
+
+.showroom .prev:hover, .showroom .next:hover {
+  color: #fff;
+  text-shadow: 0 0 10px gold;
+}

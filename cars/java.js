@@ -18,7 +18,6 @@ function filterCars() {
 /* =========================
    Lightbox Gallery (Car Detail)
    ========================= */
-let currentIndex = 0;
 let images = [];
 
 function openLightbox(img) {
@@ -102,3 +101,71 @@ window.addEventListener("load", () => {
 function changeView(src) {
   document.getElementById("lightbox-img").src = src;
 }
+function changeView(src) {
+  const img = document.getElementById("lightbox-img");
+  img.classList.add("fade-out");
+  setTimeout(() => {
+    img.src = src;
+    img.classList.remove("fade-out");
+    img.classList.add("fade-in");
+    setTimeout(() => img.classList.remove("fade-in"), 500);
+  }, 500);
+}
+// Declare once at the very top
+let currentIndex = 0;
+
+// Car views (filenames only)
+const carViews = [
+  "imgi_31_622354617_1212168611058795_2699262881328221358_n.webp", // Front
+  "imgi_32_618239202_1212169367725386_2797200893620008522_n.webp", // Back
+  "imgi_35_621799430_1212170167725306_5541391585275819580_n.webp", // Side
+  "imgi_47_618583288_1212174007724922_4851369089993468968_n.webp"  // Interior
+];
+
+// Open lightbox
+function openLightbox(imgElement) {
+  const lightbox = document.getElementById("lightbox");
+  const img = document.getElementById("lightbox-img");
+  lightbox.style.display = "block";
+
+  const filename = imgElement.src.split("/").pop();
+  img.src = filename;
+
+  // ✅ update index without redeclaring
+  currentIndex = carViews.indexOf(filename);
+}
+
+// Close lightbox
+function closeLightbox() {
+  document.getElementById("lightbox").style.display = "none";
+}
+
+// Change view (buttons)
+function changeView(src) {
+  const img = document.getElementById("lightbox-img");
+  img.classList.add("fade-out");
+  setTimeout(() => {
+    img.src = src;
+    img.classList.remove("fade-out");
+    img.classList.add("fade-in");
+    setTimeout(() => img.classList.remove("fade-in"), 500);
+  }, 500);
+
+  currentIndex = carViews.indexOf(src);
+}
+
+// Slide navigation (arrows)
+function changeSlide(n) {
+  currentIndex = (currentIndex + n + carViews.length) % carViews.length;
+  changeView(carViews[currentIndex]);
+}
+
+// Keyboard support
+document.addEventListener("keydown", function(e) {
+  const lightbox = document.getElementById("lightbox");
+  if (lightbox.style.display === "block") {
+    if (e.key === "ArrowLeft") changeSlide(-1);
+    if (e.key === "ArrowRight") changeSlide(1);
+    if (e.key === "Escape") closeLightbox();
+  }
+});

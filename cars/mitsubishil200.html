@@ -107,7 +107,21 @@
   </div>
   <div id="lightbox-caption"></div>
   <span class="close" onclick="closeLightbox()">&times;</span>
+  <div id="lightbox" class="showroom">
+  <span class="close" onclick="closeLightbox()">&times;</span>
+  
+  <!-- Left/Right Arrows -->
+  <a class="prev" onclick="changeSlide(-1)">&#10094;</a>
+  <a class="next" onclick="changeSlide(1)">&#10095;</a>
+  
+  <div class="platform">
+    <img id="lightbox-img" src="" alt="Car view">
+  </div>
+  <div id="lightbox-caption"></div>
 </div>
+
+</div>
+
 <div class="view-buttons">
   <button onclick="changeView('imgi_31_622354617_1212168611058795_2699262881328221358_n')">Front</button>
   <button onclick="changeView('imgi_32_618239202_1212169367725386_2797200893620008522_n.webp')">Back</button>
