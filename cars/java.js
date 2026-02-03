@@ -122,7 +122,6 @@ const carViews = [
   "imgi_47_618583288_1212174007724922_4851369089993468968_n.webp"  // Interior
 ];
 
-let currentIndex = 0;
 
 // Open lightbox with clicked image
 function openLightbox(imgElement) {
