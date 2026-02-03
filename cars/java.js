@@ -169,3 +169,26 @@ document.addEventListener("keydown", function(e) {
     if (e.key === "Escape") closeLightbox();
   }
 });
+let touchStartX = 0;
+let touchEndX = 0;
+
+const lightbox = document.getElementById("lightbox");
+
+lightbox.addEventListener("touchstart", function(e) {
+  touchStartX = e.changedTouches[0].screenX;
+}, false);
+
+lightbox.addEventListener("touchend", function(e) {
+  touchEndX = e.changedTouches[0].screenX;
+  handleSwipe();
+}, false);
+
+function handleSwipe() {
+  const threshold = 50; // minimum distance for swipe
+  if (touchEndX < touchStartX - threshold) {
+    changeSlide(1); // swipe left → next image
+  }
+  if (touchEndX > touchStartX + threshold) {
+    changeSlide(-1); // swipe right → previous image
+  }
+}
